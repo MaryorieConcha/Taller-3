@@ -43,21 +43,45 @@ public class Inmobiliaria {
 		}
 	}
 
-	public void agregarMuebles(Inmueble inmueble) {
-		throw new UnsupportedOperationException();
+	public boolean agregarInmuebles(Inmueble inmueble, int precio, TipoDeConstruccion tipoDeConstruccion) {
+		if (buscarInmueblePorPrecio(precio) == null || inmueble.getTipoDeConstruccion().equals(tipoDeConstruccion)){
+			this.inmuebles.add(inmueble);
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
-	public void darDeBaja(Inmueble inmueble) {
-		throw new UnsupportedOperationException();
+	public boolean darDeBaja(Inmueble inmueble, int precio, TipoDeConstruccion tipoDeConstruccion) {
+		if (buscarInmueblePorPrecio(precio) == null || inmueble.getTipoDeConstruccion().equals(tipoDeConstruccion)){
+			this.inmuebles.remove(inmueble);
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
-	public void buscarInmueblePorTipoDeConstruccion(Inmueble inmueble) {
-		throw new UnsupportedOperationException();
+	public Inmueble buscarInmueblePorTipoDeConstruccion(TipoDeConstruccion tipoDeConstruccion) {
+		for (Inmueble inmueble : this.inmuebles){
+			if (inmueble.getTipoDeConstruccion().equals(tipoDeConstruccion)){
+				return inmueble;
+			}
+		}
+		return null;
 	}
 
-	public void buscarInmueblePorPrecio(Inmueble inmueble) {
-		throw new UnsupportedOperationException();
+	public Inmueble buscarInmueblePorPrecio(int precio) {
+		for (Inmueble inmueble : this.inmuebles){
+			if (inmueble.getPrecio() == precio){
+				return inmueble;
+			}
+		}
+		return null;
 	}
 
-	public void venta(Vendedor vendedor, Cliente cliente, Inmueble inmueble) {}
+	public void venta(Vendedor vendedor, Cliente cliente, Inmueble inmueble){
+
+	}
 }

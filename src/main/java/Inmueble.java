@@ -11,6 +11,14 @@ public class Inmueble {
 		this.precio = precio;
 	}
 
+	public TipoDeConstruccion getTipoDeConstruccion() {
+		return tipoDeConstruccion;
+	}
+
+	public void setTipoDeConstruccion(TipoDeConstruccion tipoDeConstruccion) {
+		this.tipoDeConstruccion = tipoDeConstruccion;
+	}
+
 	public String getCiudad() {
 		return this.ciudad;
 	}
